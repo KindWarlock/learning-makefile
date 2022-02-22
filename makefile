@@ -1,6 +1,6 @@
 all: gen calc
 
-execute: all
+run: all
 	./gen_angles $(NUM) $(FILE)
 	./calc_angle $(FILE)
 
