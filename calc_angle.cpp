@@ -5,8 +5,15 @@
 
 // argv[1] - input file
 int main(int argc, char* argv[]) {
+    std::string in_name;
+    if (argc == 1) {
+        in_name = "gen_ang.txt";
+    }
+    else {
+        in_name = argv[1];
+    }
     std::ofstream angles("calc_ang.txt", std::ios::out);
-    std::ifstream pi(argv[1]); 
+    std::ifstream pi(in_name); 
     std::string line;
     getline(pi, line);
     while (line != "") {

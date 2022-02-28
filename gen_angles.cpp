@@ -25,10 +25,19 @@ void write_rands(double* arr, std::ofstream& file) {
 
 // argv[1] - number, argv[2] - output file
 int main(int argc, char* argv[]) {
+    std::string out_name, out_num;
+    if (argc == 1) {
+        out_name = "gen_ang.txt";
+        out_num = "10";
+    } 
+    else {
+        out_name = argv[2];
+        out_num = argv[1];
+    }
     srand(time(NULL));
-    std::ofstream out_file(argv[2], std::ios::out);  
+    std::ofstream out_file(out_name, std::ios::out);  
     double arr[PI_NUM];
-    int set_num = std::stoi(argv[1]);
+    int set_num = std::stoi(out_num);
     for (int i = 0; i < set_num; i++) {
         gen_rands(&arr[0]);
         write_rands(&arr[0], out_file);

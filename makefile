@@ -1,5 +1,3 @@
-FILE := "angles.txt"
-NUM := 10
 all: gen calc
 
 run: all
@@ -9,4 +7,4 @@ run: all
 gen:
 	g++ gen_angles.cpp -o gen_angles
 calc:
-	g++ calc_angle.cpp -o calc_angle
+	g++ calc_angle.cpp -o calc_angles
